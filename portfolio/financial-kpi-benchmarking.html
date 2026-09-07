@@ -15,6 +15,13 @@
     <h1>Sector KPI Benchmarking: Semiconductors</h1>
     <p class="lede">A peer-benchmarking analysis across 15 S&amp;P 500 semiconductor companies, ranking firms on profitability and valuation rather than headline market cap.</p>
 
+    <div class="stat-grid">
+      <div class="stat"><span class="stat-value">40.9%</span><span class="stat-label">Avg. EBITDA margin, sector</span></div>
+      <div class="stat"><span class="stat-value">46.3x</span><span class="stat-label">Avg. P/E, sector</span></div>
+      <div class="stat"><span class="stat-value">66.7%</span><span class="stat-label">Of companies pay a dividend</span></div>
+      <div class="stat"><span class="stat-value">1.6%</span><span class="stat-label">Avg. dividend yield, sector</span></div>
+    </div>
+
     <h2>Overview</h2>
     <p>Built a peer-benchmarking framework for the S&amp;P 500's semiconductor sector, combining profitability (EBITDA margin), valuation (P/E, price-to-book), and dividend policy into a single composite score &mdash; the kind of comparative view a corporate strategy or investor-relations team uses to see where a company stands against its direct peers, not just the index.</p>
 
@@ -24,6 +31,40 @@
       <li>Derived implied revenue and EBITDA margin from reported EBITDA and price-to-sales ratios, backing out revenue where it wasn't reported directly</li>
       <li>Built a composite ranking score (z-scored EBITDA margin, inverted P/E, inverted price-to-book) so the ranking rewards profitability and reasonable valuation, not just size</li>
     </ul>
+
+    <h2>Results</h2>
+
+    <figure class="figure">
+      <img src="/portfolio/img/kpi-1.png" alt="Horizontal bar chart ranking semiconductor companies by composite score">
+      <figcaption>Composite score by company &mdash; Micron leads, AMD and Monolithic Power Systems trail.</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="/portfolio/img/kpi-2.png" alt="Scatter plot of P/E ratio versus EBITDA margin, bubble size representing market cap">
+      <figcaption>Profitability vs. valuation, bubble size = market cap. The most attractive names sit toward the upper-left: high margin, low P/E.</figcaption>
+    </figure>
+
+    <div class="table-scroll">
+      <table class="data-table">
+        <caption>Top 5 and bottom 5 by composite score</caption>
+        <thead>
+          <tr><th>Company</th><th>P/E</th><th>EBITDA Margin</th><th>Price/Book</th><th>Composite Score</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Micron Technology (MU)</td><td>23.0x</td><td>75.6%</td><td>11.4</td><td>0.83</td></tr>
+          <tr><td>First Solar (FSLR)</td><td>12.6x</td><td>44.4%</td><td>2.1</td><td>0.78</td></tr>
+          <tr><td>NXP Semiconductors (NXPI)</td><td>19.5x</td><td>38.4%</td><td>5.0</td><td>0.44</td></tr>
+          <tr><td>Analog Devices (ADI)</td><td>43.1x</td><td>49.9%</td><td>5.2</td><td>0.41</td></tr>
+          <tr><td>Qorvo (QRVO)</td><td>23.9x</td><td>24.3%</td><td>2.6</td><td>0.23</td></tr>
+          <tr><td>&hellip;</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Broadcom (AVGO)</td><td>45.6x</td><td>58.4%</td><td>17.1</td><td>&minus;0.06</td></tr>
+          <tr><td>Nvidia (NVDA)</td><td>29.2x</td><td>66.4%</td><td>24.3</td><td>&minus;0.09</td></tr>
+          <tr><td>Microchip Technology (MCHP)</td><td>109.1x</td><td>29.4%</td><td>6.2</td><td>&minus;0.74</td></tr>
+          <tr><td>Monolithic Power Systems (MPWR)</td><td>74.6x</td><td>30.6%</td><td>15.4</td><td>&minus;0.84</td></tr>
+          <tr><td>Advanced Micro Devices (AMD)</td><td>121.8x</td><td>23.1%</td><td>11.6</td><td>&minus;1.28</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>Key Findings</h2>
     <ul>

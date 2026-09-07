@@ -15,6 +15,13 @@
     <h1>Sales &amp; Demand Forecasting for Inventory Planning</h1>
     <p class="lede">A time-series forecasting model on nine years of monthly sales data, built to drive inventory and staffing decisions rather than just predict a number.</p>
 
+    <div class="stat-grid">
+      <div class="stat"><span class="stat-value">7.97%</span><span class="stat-label">Holdout forecast error (MAPE)</span></div>
+      <div class="stat"><span class="stat-value">106%</span><span class="stat-label">Peak-to-trough seasonal swing</span></div>
+      <div class="stat"><span class="stat-value">+78.9%</span><span class="stat-label">Underlying growth, first yr to last</span></div>
+      <div class="stat"><span class="stat-value">~234,600</span><span class="stat-label">Units forecast, next 12 months</span></div>
+    </div>
+
     <h2>Overview</h2>
     <p>Built a demand-forecasting pipeline on nine years of monthly sales history to show how a forecasting model becomes concrete inventory and staffing guidance rather than a standalone number. The same methodology &mdash; decompose seasonality, validate on a holdout, then forecast forward &mdash; applies directly to any retailer, dealer network, or distributor's monthly sales series.</p>
 
@@ -24,6 +31,36 @@
       <li>Held out the final 12 months to validate forecast accuracy before generating a forward-looking forecast</li>
       <li>Decomposed the series to separate month-by-month seasonality from the underlying growth trend</li>
     </ul>
+
+    <h2>Results</h2>
+
+    <figure class="figure">
+      <img src="/portfolio/img/forecast-2.png" alt="Line chart comparing the model's 12-month holdout forecast against actual sales">
+      <figcaption>12-month holdout validation: the forecast (dashed) tracks the actual sales trajectory closely enough to plan against.</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="/portfolio/img/forecast-3.png" alt="Bar chart of the seasonal index by calendar month">
+      <figcaption>Seasonal index by calendar month &mdash; May peaks at 1.4x average, September troughs at 0.7x.</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="/portfolio/img/forecast-4.png" alt="Line chart of the 12-month forward sales forecast">
+      <figcaption>12-month forward forecast, built on the full nine-year history.</figcaption>
+    </figure>
+
+    <div class="table-scroll">
+      <table class="data-table">
+        <caption>Forecast vs. trailing actuals</caption>
+        <thead>
+          <tr><th>Period</th><th>Total units</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Last actual 12 months</td><td>218,738</td></tr>
+          <tr><td>Forecast, next 12 months</td><td>234,605 (+7.2%)</td></tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2>Key Findings</h2>
     <ul>

@@ -15,6 +15,13 @@
     <h1>Customer Churn &amp; Retention: A Predictive Risk Model</h1>
     <p class="lede">A predictive churn model on 7,000+ telecom subscriber records, quantifying revenue at risk and identifying the highest-leverage retention actions.</p>
 
+    <div class="stat-grid">
+      <div class="stat"><span class="stat-value">26.5%</span><span class="stat-label">Baseline churn rate</span></div>
+      <div class="stat"><span class="stat-value">$139K/mo</span><span class="stat-label">Recurring revenue at risk</span></div>
+      <div class="stat"><span class="stat-value">0.845</span><span class="stat-label">Random forest AUC</span></div>
+      <div class="stat"><span class="stat-value">~50%</span><span class="stat-label">Of churners caught in top 20% risk</span></div>
+    </div>
+
     <h2>Overview</h2>
     <p>Built a predictive churn model on a 7,043-customer telecom subscriber base to flag at-risk accounts before they cancel, then translated the model's output into a monthly revenue-at-risk figure and a prioritized retention list &mdash; the kind of deliverable a subscription or membership business would hand straight to its retention team.</p>
 
@@ -25,12 +32,37 @@
       <li>Risk-scored the full customer base and ranked by predicted churn probability to test how much revenue a targeted campaign could realistically protect</li>
     </ul>
 
+    <h2>Results</h2>
+
+    <figure class="figure">
+      <img src="/portfolio/img/churn-1.png" alt="Bar charts showing churn rate by contract type and by customer tenure">
+      <figcaption>Churn concentrates heavily in month-to-month contracts and in the first 6 months of a customer's tenure.</figcaption>
+    </figure>
+
+    <figure class="figure">
+      <img src="/portfolio/img/churn-2.png" alt="Horizontal bar chart of the top 10 churn drivers by random forest feature importance">
+      <figcaption>Top 10 churn drivers by random forest feature importance &mdash; tenure and contract length dominate.</figcaption>
+    </figure>
+
+    <div class="table-scroll">
+      <table class="data-table">
+        <caption>Model comparison on the held-out test set (1,761 customers)</caption>
+        <thead>
+          <tr><th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1</th><th>AUC</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Logistic Regression</td><td>75.0%</td><td>51.9%</td><td>79.7%</td><td>0.628</td><td>0.846</td></tr>
+          <tr><td>Random Forest</td><td>75.5%</td><td>52.4%</td><td>80.7%</td><td>0.636</td><td>0.845</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <h2>Key Findings</h2>
     <ul>
       <li>Baseline churn rate of 26.5% represents roughly <strong>$139K/month ($1.67M annualized)</strong> in recurring revenue at risk</li>
       <li>Contract type is the dominant lever: month-to-month customers churn at <strong>42.7%</strong> vs. 11.3% (one-year) and 2.8% (two-year contracts)</li>
       <li>New customers are the highest-risk group: <strong>52.9%</strong> churn in the first 6 months, falling to 9.5% after 4+ years of tenure</li>
-      <li>The random forest model reached <strong>0.845 AUC</strong>; targeting just the riskiest 20% of customers captures about half of all churners &mdash; roughly $18K/month in revenue a retention team could focus on instead of blanket outreach</li>
+      <li>Targeting just the riskiest 20% of customers captures about half of all churners &mdash; roughly $18K/month in revenue a retention team could focus on instead of blanket outreach</li>
       <li>Fiber-optic subscribers churn at more than double the rate of DSL subscribers (41.9% vs. 19.0%), pointing to a service-quality or pricing friction point worth investigating independent of the model</li>
     </ul>
 

@@ -230,3 +230,91 @@ hr.divider {
   .navbar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   h1 { font-size: 1.6rem; }
 }
+
+/* ---------- Case study: stat callouts ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.stat {
+  background: rgba(27, 42, 74, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+}
+
+.stat .stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.stat .stat-label {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* ---------- Case study: figures ---------- */
+
+.figure {
+  margin: 1.75rem 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.figure figcaption {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+}
+
+/* ---------- Case study: data tables ---------- */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0 1.75rem;
+  font-size: 0.88rem;
+}
+
+.data-table caption {
+  text-align: left;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.data-table thead th {
+  background: var(--navy);
+  color: #fff;
+  font-weight: 600;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background: rgba(27, 42, 74, 0.03);
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
