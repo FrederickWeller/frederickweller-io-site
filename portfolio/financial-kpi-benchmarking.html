@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sector KPI Benchmarking: Semiconductors &middot; Frederick Weller</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="portfolio">
+  <header class="navbar" id="site-nav"></header>
+
+  <main>
+    <p><a href="/portfolio.html">&larr; Back to Portfolio</a></p>
+
+    <h1>Sector KPI Benchmarking: Semiconductors</h1>
+    <p class="lede">A peer-benchmarking analysis across 15 S&amp;P 500 semiconductor companies, ranking firms on profitability and valuation rather than headline market cap.</p>
+
+    <h2>Overview</h2>
+    <p>Built a peer-benchmarking framework for the S&amp;P 500's semiconductor sector, combining profitability (EBITDA margin), valuation (P/E, price-to-book), and dividend policy into a single composite score &mdash; the kind of comparative view a corporate strategy or investor-relations team uses to see where a company stands against its direct peers, not just the index.</p>
+
+    <h2>Method</h2>
+    <ul>
+      <li>Python-based pipeline on S&amp;P 500 constituent financials, filtered to the Semiconductors sub-industry (15 companies)</li>
+      <li>Derived implied revenue and EBITDA margin from reported EBITDA and price-to-sales ratios, backing out revenue where it wasn't reported directly</li>
+      <li>Built a composite ranking score (z-scored EBITDA margin, inverted P/E, inverted price-to-book) so the ranking rewards profitability and reasonable valuation, not just size</li>
+    </ul>
+
+    <h2>Key Findings</h2>
+    <ul>
+      <li>Sector-wide average EBITDA margin is <strong>40.9%</strong> (median 36.1%), against an average P/E of <strong>46.3x</strong> &mdash; high margins, but also priced at a substantial premium to earnings across the group</li>
+      <li><strong>Micron Technology</strong> ranks #1 on the composite score: a 75.6% EBITDA margin at a comparatively modest 23x P/E, standing out from peers trading at much richer multiples for similar or lower margins</li>
+      <li>Only <strong>66.7%</strong> of sector constituents pay a dividend at all, and the average yield across the sector is just 1.6% &mdash; capital is overwhelmingly being reinvested rather than distributed</li>
+      <li>The two lowest-ranked companies on the composite score (<strong>AMD</strong>, <strong>Monolithic Power Systems</strong>) combine sub-31% EBITDA margins with P/E ratios above 74x &mdash; the clearest gap in this peer set between valuation and underlying profitability</li>
+    </ul>
+
+    <h2>Deliverable</h2>
+    <p>Full analysis delivered as a Jupyter notebook with the ranked comparison table, methodology for the composite score, and supporting charts.</p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="/js/include.js"></script>
+</body>
+</html>

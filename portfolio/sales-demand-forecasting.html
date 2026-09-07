@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sales &amp; Demand Forecasting for Inventory Planning &middot; Frederick Weller</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body data-page="portfolio">
+  <header class="navbar" id="site-nav"></header>
+
+  <main>
+    <p><a href="/portfolio.html">&larr; Back to Portfolio</a></p>
+
+    <h1>Sales &amp; Demand Forecasting for Inventory Planning</h1>
+    <p class="lede">A time-series forecasting model on nine years of monthly sales data, built to drive inventory and staffing decisions rather than just predict a number.</p>
+
+    <h2>Overview</h2>
+    <p>Built a demand-forecasting pipeline on nine years of monthly sales history to show how a forecasting model becomes concrete inventory and staffing guidance rather than a standalone number. The same methodology &mdash; decompose seasonality, validate on a holdout, then forecast forward &mdash; applies directly to any retailer, dealer network, or distributor's monthly sales series.</p>
+
+    <h2>Method</h2>
+    <ul>
+      <li>Python-based time-series pipeline using Holt-Winters exponential smoothing (additive trend, multiplicative seasonality)</li>
+      <li>Held out the final 12 months to validate forecast accuracy before generating a forward-looking forecast</li>
+      <li>Decomposed the series to separate month-by-month seasonality from the underlying growth trend</li>
+    </ul>
+
+    <h2>Key Findings</h2>
+    <ul>
+      <li>Forecast validated against a 12-month holdout at <strong>7.97% MAPE</strong> &mdash; accurate enough to plan inventory and staffing against, with a known error margin</li>
+      <li>Strong, consistent seasonality: sales peak in <strong>May (+43% vs. average)</strong> and trough in <strong>September (&minus;30%)</strong>, a swing of roughly 106% between the two &mdash; a pattern that should directly shape stocking and staffing schedules</li>
+      <li>Underlying demand grew <strong>78.9%</strong> comparing the first and last 12-month periods of the series, separate from the seasonal swings</li>
+      <li>12-month forward forecast: <strong>~234,600 units</strong>, a ~7.2% increase over the prior 12 months</li>
+    </ul>
+
+    <h2>Deliverable</h2>
+    <p>Full analysis delivered as a Jupyter notebook with the forecast, seasonal decomposition, and holdout validation, including charts.</p>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="/js/include.js"></script>
+</body>
+</html>
